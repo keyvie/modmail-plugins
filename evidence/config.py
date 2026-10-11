@@ -113,7 +113,7 @@ class EvidenceConfigView(View):
                 await self.plugin.evidence_bot.create()
                 await self.plugin.evidence_bot.restart()
             await self.plugin.commands.reload()
-            #await self.plugin.commands.sync()
+            await self.plugin.commands.sync()
         except Exception as err:
             await interaction.followup.send(f"Error reloading plugin: {err}", ephemeral=True)
             return
